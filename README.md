@@ -62,3 +62,19 @@ cat /etc/issue // and also what linux is running
 #### Tags
 
 [see here!](https://btholt.github.io/complete-intro-to-containers/tags)
+
+## Docker CLI
+
+#### pull / push
+
+pull allows you to pre-fetch container to run. P
+
+```
+docker pull jturpin/hollywood
+docker run -it jturpin/hollywood hollywood
+# notice it's already loaded and cached here; it doesn't redownload it
+```
+
+push allows you to push containers to whatever registry you're connected to (probably normally Docker Hub or something like Azure Container Registry).
+
+... [read more](https://btholt.github.io/complete-intro-to-containers/docker-cli)
