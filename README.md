@@ -35,3 +35,30 @@ Docker is a commandline tool that made creating, updating packaging, distributin
 #### Images
 
 These pre-made containers are called images. They basically dump out the state of the container, package that up, and store it so you can use it later.
+
+try
+
+```
+docker run --interactive --tty alpine:3.10
+// or
+docker run -it alpine:3.10 // to be shorter
+```
+
+## Node.js on Docker
+
+#### Node.js on Containers
+
+```js
+docker run -it node:12-stretch
+/// Notice this drops us into the Node.js REPL which may or may not be what you want.
+
+docker run -it node:12-stretch bash
+
+node --version // Now we can check the node version
+
+cat /etc/issue // and also what linux is running
+```
+
+#### Tags
+
+[see here!](https://btholt.github.io/complete-intro-to-containers/tags)
