@@ -4,6 +4,6 @@ USER node
 
 WORKDIR /home/node/code
 
-COPY --chown=node:node index.js .
+COPY --chown=node:node index.js index.js
 
 CMD ["node", "index.js"]
