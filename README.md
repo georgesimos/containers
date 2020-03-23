@@ -94,7 +94,7 @@ A big key with Docker container is that they're supposed to be disposable. You s
 
 #### The most basic Dockerfile-based Container
 
-```
+```docker
 FROM node:12-stretch
 
 CMD ["node", "-e", "console.log(\"hi lol\")"]
@@ -109,3 +109,38 @@ docker build .
 ```
 
 ... [read more](https://btholt.github.io/complete-intro-to-containers/dockerfile)
+
+## Build a Node.js App
+
+Make a file called `index.js` and put this in there.
+
+```js
+const http = require("http");
+
+http
+  .createServer(function(request, response) {
+    console.log("request received");
+    response.end("omg hi", "utf-8");
+  })
+  .listen(3000);
+console.log("server started");
+```
+
+create a `Dockerfile`
+
+```docker
+FROM node:12-stretch
+
+COPY index.js index.js
+
+CMD ["node", "index.js"]
+```
+
+build the docker container and run
+
+```
+docker build -t my-node-app .
+docker run my-node-app
+```
+
+[read more](https://btholt.github.io/complete-intro-to-containers/build-a-nodejs-app)
