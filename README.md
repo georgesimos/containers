@@ -85,3 +85,27 @@ docker kill $(docker ps -q) // kill all
 ```
 
 ... [read more](https://btholt.github.io/complete-intro-to-containers/docker-cli)
+
+## Intro to Dockerfiles
+
+Docker has a special file called a `Dockerfile` which allows you to outline how a container will be built. Each line in a Docker file is a new a directive of how to change your Docker container.
+
+A big key with Docker container is that they're supposed to be disposable. You should be able to create them and throw them away as many times as necessary. In other words: adopt a mindset of making everything short-lived. There are other, better tools for long-running, custom containers.
+
+#### The most basic Dockerfile-based Container
+
+```
+FROM node:12-stretch
+
+CMD ["node", "-e", "console.log(\"hi lol\")"]
+```
+
+The first thing on each line (`FROM` and `CMD` in this case) are called instructions. They don't technically have to be all caps but it's convention to do so so that the file is easier to read. Each one of these instruction incrementally changes the container from the state it was in previously, adding what we call a layer.
+
+Let's go ahead and build our container. Run (from inside of the directory of where your Dockerfile is)
+
+```
+docker build .
+```
+
+... [read more](https://btholt.github.io/complete-intro-to-containers/dockerfile)
