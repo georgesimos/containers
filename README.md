@@ -77,4 +77,11 @@ docker run -it jturpin/hollywood hollywood
 
 push allows you to push containers to whatever registry you're connected to (probably normally Docker Hub or something like Azure Container Registry).
 
+#### kill and kill all
+
+```
+docker kill id // kill one
+docker kill $(docker ps -q) // kill all
+```
+
 ... [read more](https://btholt.github.io/complete-intro-to-containers/docker-cli)
