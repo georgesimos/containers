@@ -148,3 +148,14 @@ docker run my-node-app
 ## MAKING TINY CONTAINERS – MULTI STAGE BUILDS
 
 [read more](https://btholt.github.io/complete-intro-to-containers/alpine-linux)
+
+## Docker Compose
+
+[read more](https://btholt.github.io/complete-intro-to-containers/docker-compose)
+
+if you set up a node container and you want to use nodemon
+run the docker compouse with the --build flag
+
+```bash
+docker-compose up --build
+```
